@@ -19,7 +19,7 @@ class MembersImport implements ToModel, WithStartRow, WithCustomCsvSettings
     public function getCsvSettings(): array
     {
         return [
-            'delimiter' => ';'
+            'delimiter' => ','
         ];
     }
     /**
@@ -30,8 +30,9 @@ class MembersImport implements ToModel, WithStartRow, WithCustomCsvSettings
     public function model(array $row)
     {
         $group = Group::firstOrNew(['name' => $row[1]]);
-
-
+	
+	if(!isset($group->id)) $group->save();
+	
         return new Member([
             "group_id"=>$group->id,
             "member_id"=>$row[0],
