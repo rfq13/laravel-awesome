@@ -35,7 +35,7 @@
 		    <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Nama:</strong>
-		            <input value="{{ $member->name }}" type="text" name="name" class="form-control" placeholder="Nama">
+		            <input value="{{ old('name') ?? $member->name }}" type="text" name="name" class="form-control" placeholder="Nama">
 		        </div>
 		    </div>
 		    <div class="col-xs-12 col-sm-12 col-md-12">
@@ -44,7 +44,7 @@
 		            <select name="group_id" id="group_id" class="form-control">
                         <option value="">Pilih Group</option>
                         @foreach($groups as $group)
-                            <option value="{{ $group->id }}" {{ $group->id==$member->group_id ? 'selected':'' }} >{{ $group->name }}</option>
+                            <option value="{{ $group->id }}" {{ $group->id==(old('group_id') ?? $member->group_id) ? 'selected':'' }} >{{ $group->name }}</option>
                         @endforeach
                     </select>
 		        </div>
@@ -52,19 +52,19 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Alamat:</strong>
-		            <textarea name="address" id="" cols="30" rows="10" class="form-control">{{ $member->address }}</textarea>
+		            <textarea name="address" id="" cols="30" rows="10" class="form-control">{{ old('address') ?? $member->address }}</textarea>
 		        </div>
 		    </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Hp:</strong>
-		            <input value="{{ $member->phone }}" type="text" class="form-control" name="phone">
+		            <input value="{{ old('phone') ?? $member->phone }}" type="text" class="form-control" name="phone">
 		        </div>
 		    </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Email:</strong>
-		            <input value="{{ $member->email }}" type="email" class="form-control" name="email">
+		            <input value="{{ old('email') ?? $member->email }}" type="email" class="form-control" name="email">
 		        </div>
 		    </div>
             <div class="col-xs-12 col-sm-12 col-md-12">

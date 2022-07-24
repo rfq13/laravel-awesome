@@ -166,9 +166,8 @@ class MemberController extends Controller
     public function import(Request $request)
     {
         $request->validate([
-            'file' => 'required|mimes:xls,xlsx'
+            'file' => 'required|mimes:csv'
         ]);
-        
         Excel::import(new MembersImport, $request->file);
         return back()->with('success', 'Insert Record successfully.');
     }

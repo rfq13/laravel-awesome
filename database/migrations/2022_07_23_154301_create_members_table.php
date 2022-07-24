@@ -20,7 +20,8 @@ class CreateMembersTable extends Migration
             $table->text('address');
             $table->string('phone');
             $table->string('email');
-            $table->longText('profile_pic');
+            $table->longText('profile_pic')->nullable()->default(null);
+            $table->string('member_id')->nullable();
             $table->timestamps();
         });
     }

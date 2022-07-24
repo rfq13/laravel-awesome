@@ -34,7 +34,7 @@
 		    <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Nama:</strong>
-		            <input type="text" name="name" class="form-control" placeholder="Nama">
+		            <input type="text" name="name" class="form-control" placeholder="Nama" value="{{old('name')}}">
 		        </div>
 		    </div>
 		    <div class="col-xs-12 col-sm-12 col-md-12">
@@ -43,7 +43,7 @@
 		            <select name="group_id" class="form-control" id="group_id">
                         <option value="">Pilih Group</option>
                         @foreach($groups as $group)
-                            <option value="{{ $group->id }}">{{ $group->name }}</option>
+                            <option value="{{ $group->id }}" {{old('group_id') == $group->id 'selected' : ''}}>{{ $group->name }}</option>
                         @endforeach
                     </select>
 		        </div>
@@ -51,19 +51,19 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Alamat:</strong>
-		            <textarea name="address" id="" cols="30" rows="10" class="form-control"></textarea>
+		            <textarea name="address" id="" cols="30" rows="10" class="form-control">{{old('address')}}</textarea>
 		        </div>
 		    </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Hp:</strong>
-		            <input type="text" class="form-control" name="phone">
+		            <input type="text" class="form-control" name="phone" value="{{old('phone')}}">
 		        </div>
 		    </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Email:</strong>
-		            <input type="email" class="form-control" name="email">
+		            <input type="email" class="form-control" name="email" value="{{old('email')}}">
 		        </div>
 		    </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
