@@ -58,7 +58,7 @@
     
 
 
-    {!! $members->links() !!}
+    {!! $members->links("pagination::bootstrap-4") !!}
 
 
 <p class="text-center text-primary"><small> </small></p>
