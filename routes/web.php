@@ -20,6 +20,7 @@ use App\Http\Controllers\MemberController;
 */
 
 Route::get('/', function () {
+	if(!\Auth::check()) return redirect()->route('login');
     return view('welcome');
 });
 
